@@ -1,0 +1,599 @@
+
+@import url("https://fonts.googleapis.com/css?family=Anton");
+
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.cf {
+  zoom: 1; }
+
+.cf:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.inner {
+  max-width: 920px;
+  margin: 0 auto; }
+
+.text-center {
+  text-align: center; }
+
+body {
+  background: #fff;
+  color: #222;
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: 'avenir next','Helvetica neue','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ','Meiryo','ＭＳ Ｐゴシック',sans-serif;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+      text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased; }
+
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  z-index: 10; }
+  .header img {
+    width: 100px;
+    margin-top: 12px; }
+  .header_logo {
+    float: left; }
+  .header_link {
+    float: right; }
+  .header li {
+    display: inline-block;
+    line-height: 60px;
+    padding: 0 16px;
+    font-size: 15px; }
+  .header a {
+    text-decoration: none;
+    color: #222; }
+
+canvas {
+  width: 100%; }
+
+#one_top {
+  position: relative;
+  text-align: center;
+  height: 82vh; }
+
+.index_text {
+  position: absolute;
+  bottom: 32px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 740px;
+  left: 0;
+  right: 0;
+  -webkit-animation: flicker 1.2s;
+          animation: flicker 1.2s; }
+  .index_text img {
+    width: 100%; }
+
+.about_title {
+  font-size: 20px;
+  color: #1AD6FD;
+  margin: 4px 0 64px; }
+
+.about_area_head {
+  margin: 300px 0 32px;
+  font-size: 42px; }
+
+.about_area_text {
+  margin: 0 0 300px;
+  line-height: 48px;
+  color: #66757f; }
+  .about_area_text b {
+    font-size: 22px;
+    display: block;
+    padding: 12px 0;
+    letter-spacing: 0.1em;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+    width: 100%; }
+  .about_area_text span {
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05); }
+
+.news {
+  line-height: 2; }
+  .news td:first-child {
+    padding: 0 50px; }
+
+.table-left {
+  float: left;
+  width: 30%; }
+
+.table-right {
+  float: right;
+  width: 70%;
+  color: #657786; }
+
+#news {
+  margin: 160px 0; }
+
+#contact {
+  padding: 128px 0; }
+
+h2 {
+  font-size: 26px; }
+
+.footer {
+  background-color: #222;
+  padding: 30px 0 100px;
+  margin-top: 100px; }
+  .footer_links {
+    width: 37%;
+    float: left;
+    color: #fff; }
+  .footer_sub {
+    width: 37%;
+    float: left;
+    color: #fff; }
+  .footer_logo {
+    width: 15%;
+    float: right; }
+    .footer_logo img {
+      width: 100%; }
+  .footer a {
+    color: #fff;
+    text-decoration: none; }
+
+.menu-trigger {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+  float: right;
+  margin: 12px 4px;
+  position: relative;
+  width: 32px;
+  height: 24px; }
+  .menu-trigger span {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #222;
+    border-radius: 4px; }
+    .menu-trigger span:nth-of-type(1) {
+      top: 0; }
+    .menu-trigger span:nth-of-type(2) {
+      top: 11px; }
+    .menu-trigger span:nth-of-type(3) {
+      bottom: 0; }
+
+.header_sp_link {
+  display: none; }
+
+.info_data {
+  font-size: 15px;
+  color: #66757f;
+  line-height: 2; }
+  .info_data b {
+    color: #222;
+    font-size: 17px; }
+
+@media (max-width: 720px) {
+  .header {
+    height: 44px;
+    padding: 16px; }
+    .header img {
+      width: 100px;
+      margin: 8px 10px; }
+  .header_logo {
+    width: 100%; }
+  .header_link {
+    display: none; }
+  .img-space {
+    margin: 320px 0 0; }
+    .img-space img {
+      width: 100%; }
+  .index_text {
+    overflow: hidden;
+    bottom: -20px; }
+    .index_text img {
+      width: 120%; }
+  .news {
+    line-height: 2; }
+    .news td:first-child {
+      padding: 0 5px; }
+  .about_title {
+    font-size: 16px; }
+  .header_sp_link {
+    display: none; }
+  .about_title {
+    font-size: 18px; }
+  .about_area_head {
+    font-size: 32px; }
+    .about_area_head b {
+      font-size: 32px;
+      padding: 0 8px; }
+  .about_area_text b {
+    display: block;
+    font-size: 18px; }
+  .table-area {
+    padding: 0 30px; }
+  .table-li {
+    margin: 30px 0; }
+  .table-left {
+    float: left;
+    width: 100%;
+    color: #222; }
+  .table-right {
+    float: right;
+    width: 100%; }
+  .footer {
+    background-color: #222;
+    padding: 30px 20px;
+    margin-top: 100px; }
+    .footer_links {
+      width: 55%;
+      float: left;
+      color: #fff; }
+    .footer_logo {
+      width: 35%; } }
+
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 0.06074;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=6)"; }
+  2% {
+    opacity: 0.9899;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=98)"; }
+  4% {
+    opacity: 0.04365;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=4)"; }
+  6% {
+    opacity: 0.0083;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
+  8% {
+    opacity: 0.47904;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=47)"; }
+  10% {
+    opacity: 0.70099;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; }
+  12% {
+    opacity: 0.59979;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=59)"; }
+  14% {
+    opacity: 0.98072;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=98)"; }
+  16% {
+    opacity: 0.13513;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=13)"; }
+  18% {
+    opacity: 0.95564;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)"; }
+  20% {
+    opacity: 0.01791;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)"; }
+  22% {
+    opacity: 0.93172;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=93)"; }
+  24% {
+    opacity: 0.19471;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=19)"; }
+  26% {
+    opacity: 0.66028;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=66)"; }
+  28% {
+    opacity: 0.05415;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=5)"; }
+  30% {
+    opacity: 0.05702;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=5)"; }
+  32% {
+    opacity: 0.9808;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=98)"; }
+  34% {
+    opacity: 0.20676;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)"; }
+  36% {
+    opacity: 0.99642;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=99)"; }
+  38% {
+    opacity: 0.06274;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=6)"; }
+  40% {
+    opacity: 0.5688;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=56)"; }
+  42% {
+    opacity: 0.64648;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=64)"; }
+  44% {
+    opacity: 0.94059;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=94)"; }
+  46% {
+    opacity: 0.316;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=31)"; }
+  48% {
+    opacity: 0.60913;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; }
+  50% {
+    opacity: 0.99983;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=99)"; }
+  52% {
+    opacity: 0.60879;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; }
+  54% {
+    opacity: 0.87523;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=87)"; }
+  56% {
+    opacity: 0.09952;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=9)"; }
+  58% {
+    opacity: 0.04771;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=4)"; }
+  60% {
+    opacity: 0.2414;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=24)"; }
+  62% {
+    opacity: 0.59108;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=59)"; }
+  64% {
+    opacity: 0.17704;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=17)"; }
+  66% {
+    opacity: 0.17057;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=17)"; }
+  68% {
+    opacity: 0.52649;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=52)"; }
+  70% {
+    opacity: 0.95639;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)"; }
+  72% {
+    opacity: 0.62392;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=62)"; }
+  74% {
+    opacity: 0.01732;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)"; }
+  76% {
+    opacity: 0.73029;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=73)"; }
+  78% {
+    opacity: 0.47303;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=47)"; }
+  80% {
+    opacity: 0.91776;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=91)"; }
+  82% {
+    opacity: 0.63973;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=63)"; }
+  84% {
+    opacity: 0.56848;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=56)"; }
+  86% {
+    opacity: 0.63459;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=63)"; }
+  88% {
+    opacity: 0.96675;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=96)"; }
+  90% {
+    opacity: 0.28638;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=28)"; }
+  92% {
+    opacity: 0.02336;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=2)"; }
+  94% {
+    opacity: 0.06409;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=6)"; }
+  96% {
+    opacity: 0.35006;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)"; }
+  98% {
+    opacity: 0.17088;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=17)"; }
+  100% {
+    opacity: 0.4086;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; } }
+
+@keyframes flicker {
+  0% {
+    opacity: 0.06074;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=6)"; }
+  2% {
+    opacity: 0.9899;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=98)"; }
+  4% {
+    opacity: 0.04365;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=4)"; }
+  6% {
+    opacity: 0.0083;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
+  8% {
+    opacity: 0.47904;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=47)"; }
+  10% {
+    opacity: 0.70099;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; }
+  12% {
+    opacity: 0.59979;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=59)"; }
+  14% {
+    opacity: 0.98072;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=98)"; }
+  16% {
+    opacity: 0.13513;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=13)"; }
+  18% {
+    opacity: 0.95564;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)"; }
+  20% {
+    opacity: 0.01791;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)"; }
+  22% {
+    opacity: 0.93172;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=93)"; }
+  24% {
+    opacity: 0.19471;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=19)"; }
+  26% {
+    opacity: 0.66028;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=66)"; }
+  28% {
+    opacity: 0.05415;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=5)"; }
+  30% {
+    opacity: 0.05702;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=5)"; }
+  32% {
+    opacity: 0.9808;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=98)"; }
+  34% {
+    opacity: 0.20676;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)"; }
+  36% {
+    opacity: 0.99642;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=99)"; }
+  38% {
+    opacity: 0.06274;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=6)"; }
+  40% {
+    opacity: 0.5688;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=56)"; }
+  42% {
+    opacity: 0.64648;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=64)"; }
+  44% {
+    opacity: 0.94059;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=94)"; }
+  46% {
+    opacity: 0.316;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=31)"; }
+  48% {
+    opacity: 0.60913;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; }
+  50% {
+    opacity: 0.99983;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=99)"; }
+  52% {
+    opacity: 0.60879;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; }
+  54% {
+    opacity: 0.87523;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=87)"; }
+  56% {
+    opacity: 0.09952;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=9)"; }
+  58% {
+    opacity: 0.04771;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=4)"; }
+  60% {
+    opacity: 0.2414;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=24)"; }
+  62% {
+    opacity: 0.59108;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=59)"; }
+  64% {
+    opacity: 0.17704;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=17)"; }
+  66% {
+    opacity: 0.17057;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=17)"; }
+  68% {
+    opacity: 0.52649;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=52)"; }
+  70% {
+    opacity: 0.95639;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)"; }
+  72% {
+    opacity: 0.62392;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=62)"; }
+  74% {
+    opacity: 0.01732;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)"; }
+  76% {
+    opacity: 0.73029;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=73)"; }
+  78% {
+    opacity: 0.47303;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=47)"; }
+  80% {
+    opacity: 0.91776;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=91)"; }
+  82% {
+    opacity: 0.63973;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=63)"; }
+  84% {
+    opacity: 0.56848;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=56)"; }
+  86% {
+    opacity: 0.63459;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=63)"; }
+  88% {
+    opacity: 0.96675;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=96)"; }
+  90% {
+    opacity: 0.28638;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=28)"; }
+  92% {
+    opacity: 0.02336;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=2)"; }
+  94% {
+    opacity: 0.06409;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=6)"; }
+  96% {
+    opacity: 0.35006;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)"; }
+  98% {
+    opacity: 0.17088;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=17)"; }
+  100% {
+    opacity: 0.4086;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; } }
