@@ -2,6 +2,7 @@
 body{
   background-color: #141414;
   color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 .wrapper{
   display: flex;
@@ -13,4 +14,22 @@ body{
 
 img{
   width: 300px;
+}
+
+.wrap{
+  margin: 0 auto;
+  line-height: 2;
+  width: calc(100% - 32px);
+  max-width: 580px;
+}
+
+h1{
+  font-size: 26px;
+  font-weight: bold;
+}
+
+h2{
+  font-size: 18px;
+  margin-top: 32px;
+  font-weight: bold;
 }
