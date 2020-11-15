@@ -29,15 +29,67 @@
     <meta name="google-site-verification" content="H9s8rVUhEYuIS5-4o6gR1EWhJrx6y7e2FG1TVQVV24s" />
     <!-- stylesheet-->
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
 
     <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" defer ></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="css/style.css">
 
   </head>
   <body>
-    <div class="wrapper">
-        <img src="./img/logo.svg">
+
+    <section class="hero is-medium is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            お問い合わせ
+          </h1>
+          <h2 class="subtitle">
+            株式会社Gupero
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="column">
+    <form class="formrun" action="https://form.run/api/v1/r/rurol7w3hd3n5e9r46nwiqlt" method="post">
+
+
+      <div class="field">
+        <label class="label">お名前</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="" data-formrun-required>
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">メール [必須]</label>
+        <div class="control">
+          <input class="input" type="email" placeholder="password@example.com" data-formrun-required>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label class="label">お問い合わせ [必須]</label>
+        <div class="control">
+          <textarea type="内容"class="textarea" placeholder="e.g. Hello world" data-formrun-required></textarea>
+        </div>
+      </div>
+
+      <div class="_formrun_gotcha">
+        <style media="screen">._formrun_gotcha {position:absolute!important;height:1px;width:1px;overflow:hidden;}</style>
+        <label for="_formrun_gotcha">If you are a human, ignore this field</label>
+        <input type="text" name="_formrun_gotcha" id="_formrun_gotcha" tabindex="-1">
+      </div>
+
+      <div class="control">
+        <button class="button is-primary" type="submit" data-formrun-error-text="未入力の項目があります" data-formrun-submitting-text="送信中...">送信</button>
+      </div>
+
+    </form>
+
+  </div>
     </div>
     <!-- javascript-->
     <script>
