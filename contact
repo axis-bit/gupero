@@ -58,14 +58,14 @@
       <div class="field">
         <label class="label">お名前</label>
         <div class="control">
-          <input class="input" type="text" placeholder="" data-formrun-required>
+          <input name="お名前" class="input" type="text" placeholder="" data-formrun-required>
         </div>
       </div>
       
       <div class="field">
         <label class="label">メール [必須]</label>
         <div class="control">
-          <input class="input" type="email" placeholder="gupero@example.com" data-formrun-required>
+          <input name="メール" class="input" type="email" placeholder="gupero@example.com" data-formrun-required>
         </div>
       </div>
 
@@ -73,7 +73,7 @@
       <div class="field">
         <label class="label">お問い合わせ [必須]</label>
         <div class="control">
-          <textarea type="内容"class="textarea" data-formrun-required></textarea>
+          <textarea name="内容" type="内容"class="textarea" data-formrun-required></textarea>
         </div>
       </div>
 
