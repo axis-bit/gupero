@@ -33,7 +33,6 @@
     <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" defer ></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" />
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://sdk.form.run/js/v2/formrun.js"></script>
 
   </head>
   <body>
@@ -89,6 +88,8 @@
       </div>
 
     </form>
+
+    <script src="https://sdk.form.run/js/v2/formrun.js"></script>
 
   </div>
     </div>
