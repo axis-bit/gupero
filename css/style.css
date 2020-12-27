@@ -3,16 +3,31 @@ body{
 }
 
 .wrapper{
-  background-color: #141414;
+  background-color: #fff;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
-  flex-direction : column
+  flex-direction : column;
+  z-index: -2;
 }
+
 
 img{
   width: 300px;
+  background: #141414;
+  padding: 14px 20px 10px;
+  z-index: 2;
+}
+
+.box{
+  width: 340px;
+  height: 340px;
+  background-color: #fff;
+  position: absolute;
+  margin-top: -53px;
+  margin-left: -180px;
+  z-index: 1;
 }

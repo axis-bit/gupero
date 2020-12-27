@@ -15,12 +15,12 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="株式会社Gupero">
     <meta property="og:site_name" content="株式会社Gupero">
-    <meta property="og:description" content="株式会社Gupero の公式ページ。まだない日常を、ここから。インタラクティブなエンターテイメントの提供やITサービス改善、開発を行っております。">
+    <meta property="og:description" content="株式会社Gupero の公式ページ。まだない日常を、ここから。インタラクティブなエンターテイメントやサービス開発、改善を行っております。">
     <meta property="og:locale" content="ja_JP">
     <!-- twitter card-->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="株式会社Gupero">
-    <meta property="twitter:description" content="株式会社Gupero の公式ページ。まだない日常を、ここから。インタラクティブなエンターテイメントの提供やITサービス改善、開発を行っております。">
+    <meta property="twitter:description" content="株式会社Gupero の公式ページ。まだない日常を、ここから。インタラクティブなエンターテイメントやサービス開発、改善を行っております。">
     <meta property="twitter:image" content="https://gupero.work/img/ogp.png">
     <meta property="twitter:site" content="@gupero_official">
     <meta property="twitter:creator" content="@gupero_official">
@@ -31,12 +31,73 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" defer ></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@8.1.0/lib/browser/math.min.js"></script>
 
   </head>
   <body>
     <div class="wrapper">
         <img src="./img/logo.svg">
+        <!-- <div class="box"></div> -->
+        <canvas id="myCanvas" class="box" width="340" height="340" style="border:1px solid #d3d3d3;"></canvas>
+
+        <body>
+          <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/mathjs@8.1.0/lib/browser/math.min.js"></script>
+          <script>
+            const predictions = document.getElementById('predictions');
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+      
+            const session = new onnx.InferenceSession();
+            session.loadModel("./gan.onnx");
+      
+            
+            async function runExample(x, y, session) {
+              ctx.scale(5.3125,5.312)
+              const tensor = new Tensor(new Float32Array([x, y]), "float32", [1, 2])
+      
+              const outputMap = await session.run([tensor]);
+              const outputData = outputMap.values().next().value.data;
+              max= Math.max(...outputData)
+              min= Math.min(...outputData)
+              var a = outputData.map(x => x -min/ (max-min + 0.00001));
+              a = a.map(x => x*255);
+              ctx.clearRect(0, 0, ctx.width, ctx.height);
+      
+              for (var i = 0; i < 64; i++) {
+               for (var j = 0; j < 64; j++) {
+                var l = (i*64+j);
+                ctx.fillStyle = 'rgb(' + a[l]+ ', ' + a[l+(64 * 64 * 1)] + ', '+ a[l+(64 * 64 * 2)] +')';
+                ctx.fillRect(i , j, 1, 1);
+               }
+              }
+              ctx.scale(1/5.3125,1 /5.3125)
+            }
+            // runExample(0, 0, session)    
+            var c = 0;
+            window.onmousemove = function (e) {
+              c += 1;
+              if (c > 12){
+                runExample(e.pageX/window.innerWidth *2 - 1,e.pageY/window.innerHeight *2 - 1, session);
+                c = 0
+              }
+            }
+
+            window.addEventListener("deviceorientation", handleOrientation, true);
+ 
+            function handleOrientation(event) {
+              c += 1;
+                if (c > 12){
+                var beta     = event.beta/180;
+                var gamma    = event.gamma/90;
+                runExample(beta,gamma- 1, session);
+              }
+            }
+
+
+
+          </script>
     </div>
     <!-- javascript-->
     <script>
