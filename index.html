@@ -54,7 +54,6 @@
       
             
             async function runExample(x, y, session) {
-              ctx.scale(5.3125,5.312)
               const tensor = new Tensor(new Float32Array([x, y]), "float32", [1, 2])
       
               const outputMap = await session.run([tensor]);
@@ -64,7 +63,8 @@
               var a = outputData.map(x => x -min/ (max-min + 0.00001));
               a = a.map(x => x*255);
               ctx.clearRect(0, 0, ctx.width, ctx.height);
-      
+              ctx.scale(5.3125,5.312)
+              
               for (var i = 0; i < 64; i++) {
                for (var j = 0; j < 64; j++) {
                 var l = (i*64+j);
