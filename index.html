@@ -82,14 +82,6 @@
               ctx.scale(1/5.3125,1 /5.3125)
             }
             var c = 0;
-            // window.onmousemove = function (e) {
-            //   c += 1;
-            //   if (c > 12){
-            //     runGraph(e.pageX/window.innerWidth *2 - 1,e.pageY/window.innerHeight *2 - 1, session);
-            //     c = 0
-            //   }
-            // }
-
             $(document).on("mousemove touchmove touchstart", function( e ) {
               runGraph(e.pageX/window.innerWidth *2 - 1,e.pageY/window.innerHeight *2 - 1, session);
             });
@@ -98,7 +90,6 @@
 
           </script>
     </div>
-    <!-- javascript-->
     <script>
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
