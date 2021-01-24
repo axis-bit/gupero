@@ -33,6 +33,7 @@
     <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" defer ></script>
     <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjs@8.1.0/lib/browser/math.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   </head>
   <body>
@@ -49,11 +50,17 @@
             var c=document.getElementById("myCanvas");
             var ctx=c.getContext("2d");
       
+
             const session = new onnx.InferenceSession();
-            session.loadModel("./gan.onnx");
-      
             
-            async function runExample(x, y, session) {
+            async function dd_load(){
+              await session.loadModel("./gan.onnx");
+            }
+      
+            dd_load().then(loaded=>runGraph(0.5,0.5,session));
+
+            
+            async function runGraph(x, y, session) {
               const tensor = new Tensor(new Float32Array([x, y]), "float32", [1, 2])
       
               const outputMap = await session.run([tensor]);
@@ -74,27 +81,19 @@
               }
               ctx.scale(1/5.3125,1 /5.3125)
             }
-            // runExample(0, 0, session)    
             var c = 0;
-            window.onmousemove = function (e) {
-              c += 1;
-              if (c > 12){
-                runExample(e.pageX/window.innerWidth *2 - 1,e.pageY/window.innerHeight *2 - 1, session);
-                c = 0
-              }
-            }
+            // window.onmousemove = function (e) {
+            //   c += 1;
+            //   if (c > 12){
+            //     runGraph(e.pageX/window.innerWidth *2 - 1,e.pageY/window.innerHeight *2 - 1, session);
+            //     c = 0
+            //   }
+            // }
 
-            window.onscroll = function (e) {
-              c += 1;
-              if (c > 12){
-                var scrollTop =
-        document.documentElement.scrollTop || 
-        document.body.scrollTop; 
-                runExample(scrollTop/window.innerWidth,0, session);
-                c = 0
-              }
-            }
-
+            $(document).on("mousemove touchmove touchstart", function( e ) {
+              runGraph(e.pageX/window.innerWidth *2 - 1,e.pageY/window.innerHeight *2 - 1, session);
+            });
+            
 
 
           </script>
